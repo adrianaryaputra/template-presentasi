@@ -1,0 +1,60 @@
+\documentclass[10pt,aspectratio=169]{beamer}    % 16/9
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\mode<presentation>{
+  \usetheme{EuXFEL}
+  \usecolortheme{EuXFEL}
+}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=simple,labelsep=colon}
+\renewcommand{\thesubfigure}{}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usetikzlibrary{shapes, arrows, calc, positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{amsmath,amssymb}%,amsthm,amsxtra,mathabx}
+\usepackage{mathtools, nccmath}
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{datetime}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand\mathfamilydefault{}
+\newcommand{\colorbf}[1]{{\color{xOrange}\textbf{#1}}}
+
+\newdateformat{dmydate}{\monthname[\THEMONTH] \THEYEAR}   
+
+\title[JUDUL PENDEK]{Judul Panjang \\ Bisa Dua Baris}
+
+\author{Adrian A. Firmansyah } % Your name
+\institute[ITS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{\noindent
+    adrianaryaputra@icloud.com\\
+    6022201027\\
+}
+
+\date{\dmydate\today} % Date, can be changed to a custom date
+\setbeamersize{text margin left=.05\pdfpagewidth,text margin right=.05\pdfpagewidth}
+\setlength{\parskip}{1em}
+\graphicspath{ {./src/img/} }
+
+
+
+\begin{document}{
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+}
+
+
+\end{document}
