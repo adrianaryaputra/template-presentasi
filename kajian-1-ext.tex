@@ -1,0 +1,97 @@
+\begin{frame}[allowframebreaks]
+    \frametitle{Pustaka 1: Tambahan}
+
+    \begin{itemize}
+        \item vektor state sistem:
+        \begin{equation}
+            x=\left[\begin{array}{c}
+            p_{x} \\
+            p_{y} \\
+            v \\
+            \psi \\
+            \dot{\psi}
+            \end{array}\right], \quad v=\sqrt{v_{x}^{2}+v_{y}^{2}}, \quad \psi=\tan ^{-1} \frac{v_{y}}{v_{x}}
+            \label{eq: 2-LREKF-state}
+        \end{equation}
+        \item state sistem:
+        \begin{equation}
+            x_{k+1}=x_{k}+\left[\begin{array}{c}
+            \frac{v_{k}}{\dot{\psi}_{k}}\left(\sin \left(\psi_{k}+\dot{\psi}_{k} \Delta t\right)-\sin \left(\psi_{k}\right)\right) \\
+            \frac{v_{k}}{\dot{\psi}_{k}}\left(-\cos \left(\psi_{k}+\dot{\psi}_{k} \Delta t\right)+\cos \left(\psi_{k}\right)\right) \\
+            0 \\
+            \Delta t \\
+            0
+            \end{array}\right]+\nu_{k}
+            \label{eq: 2-LREKF-state-eq}
+        \end{equation}
+        \item perhitungan prediksi $p_x$ dan $p_y$
+        \begin{equation}
+            \begin{array}{l}
+            p_{x_{k+1}}=p_{x_{k}}+v_{k} \cos \left(\psi_{k}\right) \Delta t \\
+            p_{y_{k+1}}=p_{y_{k}}+v_{k} \sin \left(\psi_{k}\right) \Delta t
+            \end{array}
+            \label{eq: 2-LREKF-div0}
+        \end{equation}
+        \item noise sistem
+        \begin{equation}
+            \nu_{k}=\left[\begin{array}{c}
+            \frac{1}{2}(\Delta t)^{2} \cos \left(\psi_{k}\right) \nu_{a, k} \\
+            \frac{1}{2}(\Delta t)^{2} \sin \left(\psi_{k}\right) \nu_{a, k} \\
+            \Delta t \nu_{a, k} \\
+            \frac{1}{2}(\Delta t)^{2} \nu_{\ddot{\psi}, k} \\
+            \Delta t \nu_{\ddot{\psi}, k}
+            \end{array}\right]
+            \label{eq: 2-LREKF-state-noise}
+        \end{equation}
+        \item kovarian
+        \begin{equation}
+            Q=\left[\begin{array}{ccccc}
+                \frac{\Delta t^{4}}{4} \sigma_{a_{x}}^{2} & 0 & \frac{\Delta t^{3}}{2} \sigma_{a_{x}}^{2} & 0 & 0 \\
+                0 & \frac{\Delta t^{4}}{4} \sigma_{a_{y}}^{2} & \frac{\Delta t^{3}}{2} \sigma_{a_{y}}^{2} & 0 & 0 \\
+                \frac{\Delta t^{3}}{2} \sigma_{a_{x}}^{2} & \frac{\Delta t^{3}}{2} \sigma_{a_{y}}^{2} & \Delta t^{2} \sigma_{a}^{2} & 0 & 0 \\
+                0 & 0 & 0 & \Delta t^{2} \sigma_{\psi}^{2} & 0 \\
+                0 & 0 & 0 & 0 & \Delta t^{2} \sigma_{\dot{\psi}}^{2}
+                \label{eq: 2-LREKF-state-cov}
+            \end{array}\right]
+        \end{equation}
+        \item matriks pengukuran dan error pengukuran Lidar
+        \begin{equation}
+            \begin{array}{l}
+            H_{\text {lidar }}=\left[\begin{array}{lllll}
+            1 & 0 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 & 0
+            \end{array}\right], \\
+            R_{\text {lidar }}=E\left[\omega \omega^{\top}\right]=\left[\begin{array}{cc}
+            \sigma_{p_{x}}^{2} & 0 \\
+            0 & \sigma_{p_{y}}^{2}
+            \end{array}\right],
+            \end{array}
+            \label{eq: 2-LREKF-HQ}
+        \end{equation}
+        \item matriks pengukuran dan error pengukuran Radar
+        \begin{equation}
+            H_{j_{\mathrm{radar}}}=\frac{1}{|p|^{2}}\left[\begin{array}{cccc}
+            p_{x}|p| & p_{y}|p| & 0 & 0 \\
+            -p_{y} & p_{x} & 0 & 0 \\
+            \frac{p_{y} v p_{1}}{|p|} & -\frac{p_{x} v p_{1}}{|p|} & p_{2}|p| & v p_{1}|p|
+            \end{array}\right]
+        \end{equation}
+        $$
+        |p|=\sqrt{p_{x}^{2}+p_{y}^{2}}
+        $$
+        $$
+        p_{1}=p_{y} \cos (\psi)-p_{x} \sin (\psi)
+        $$
+        $$
+        p_{2}=p_{x} \cos (\psi)+p_{y} \sin (\psi)
+        $$
+        \begin{equation}
+            R_{\text {radar }}=\left[\begin{array}{ccc}
+            \sigma_{p}^{2} & 0 & 0 \\
+            0 & \sigma_{\varphi}^{2} & 0 \\
+            0 & 0 & \sigma_{\dot{\rho}}^{2}
+            \end{array}\right]
+        \end{equation}
+    \end{itemize}
+
+\end{frame}

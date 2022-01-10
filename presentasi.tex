@@ -26,6 +26,10 @@
 \usepackage{verbatim}
 \usepackage{datetime}
 
+\usepackage[backend=bibtex, sorting=ydnt, style=authoryear, defernumbers=true]{biblatex}
+\addbibresource{citation.bib}
+\nocite{*}
+
 
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand\mathfamilydefault{}
@@ -33,7 +37,7 @@
 
 \newdateformat{dmydate}{\monthname[\THEMONTH] \THEYEAR}   
 
-\title[JUDUL PENDEK]{Judul Panjang \\ Bisa Dua Baris}
+\title[Tracking Multi-sensor dengan MIPDA]{Desain Sistem Tracking Halangan di Sekitar Mobil Otonom Berdasarkan Data Multi-sensor Menggunakan Multi-Object Integrated Probabilistic Data Association}
 
 \author{Adrian A. Firmansyah } % Your name
 \institute[ITS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -56,5 +60,74 @@
     \end{frame}
 }
 
+
+\begin{frame}
+    \Huge
+    \begin{center}
+        Kajian Pustaka
+    \end{center}
+\end{frame}
+
+
+\input{./kajian-1.tex}
+\input{./kajian-2.tex}
+\input{./kajian-3.tex}
+
+
+\begin{frame}
+    \Huge
+    \begin{center}
+        Pendahuluan
+    \end{center}
+\end{frame}
+
+
+\input{./pendahuluan.tex}
+
+
+\begin{frame}
+    \Huge
+    \begin{center}
+        Metodologi Penelitian
+    \end{center}
+\end{frame}
+
+
+\input{./metodologi.tex}
+
+
+\begin{frame}
+    \Huge
+    \begin{center}
+        Rencana dan Jadwal Kegiatan
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Rencana dan Jadwal Kegiatan}
+    \centering
+    \includegraphics[width=.7\textwidth]{jadwal.png}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Referensi}
+    \printbibliography
+\end{frame}
+
+
+\begin{frame}
+    \Huge
+    \begin{center}
+        Terima Kasih
+    \end{center}
+\end{frame}
+
+
+% TAMBAHAN
+\input{kajian-1-ext.tex}
+\input{kajian-2-ext.tex}
+\input{kajian-3-ext.tex}
 
 \end{document}

@@ -1,0 +1,39 @@
+\begin{frame}
+    \frametitle{Rumusan Masalah}
+    \begin{enumerate}
+        \item mobil otonom memerlukan sensor yang mampu menggantikan fungsi dan kemampuan dari indera manusia, terutama kemampuan untuk memperkirakan jarak halangan di sekitarnya.
+        \item lidar dapat menentukan jarak secara akurat, namun tidak dapat membedakan jenis dari halangan.
+        \item kamera dengan klasifikasi objek mampu membedakan jenis halangan, namun tidak dapat menentukan jarak secara akurat.
+        \item dibutuhkan metode tracking untuk melakukan track pada halangan yang telah terdeteksi terhadap referensi bumi agar mobil dapat menghindari halangan.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Tujuan}
+    \justifying
+    Tujuan dari penelitian ini adalah \textbf{melakukan tracking halangan, posisi, dan pose dari mobil otonom} yang didapatkan melalui gabungan sensor Kamera, Lidar, GPS serta INS \textbf{menggunakan Multi-Object Integrated Probability Data Association} sehingga hasil tracking menjadi lebih akurat dibandingkan dengan data yang dihasilkan oleh satu sensor.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Batasan Masalah}
+    \justifying
+    \begin{enumerate}
+        \justifying
+        \item Sensor deteksi jarak menggunakan Lidar dan Kamera.
+        \item Rentang deteksi Lidar dibatasi pada kemampuan sensor yang dimiliki.
+        \item Rentang deteksi Kamera dibatasi pada \textit{Field of View} dan resolusi kamera.
+        \item Objek tracking terklasifikasi dibatasi pada mobil dan pedestrian, namun tidak menutup kemungkinan untuk dilakukan penambahan klasifikasi lainnya.
+        \item Pengambilan data akan dilakukan secara nyata, namun tidak menutup kemungkinan akan digunakan simulasi menggunakan Microsoft AirSim apabila kemampuan deteksi sensor yang dibutuhkan (Lidar, Kamera, INS dan GPS) tidak mencukupi.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Kontribusi}
+
+    \justifying
+    Kontribusi dari penelitian ini adalah menghasilkan sistem tracking halangan, posisi, dan pose kendaraan yang didapatkan melalui gabungan sensor Kamera, Lidar, GPS, serta INS menggunakan Multi-Object Integrated Probability Data Association sehingga hasil tracking menjadi lebih akurat dibandingkan dengan data yang dihasilkan oleh satu sensor.
+
+\end{frame}

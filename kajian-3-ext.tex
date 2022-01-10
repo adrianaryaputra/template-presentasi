@@ -1,0 +1,40 @@
+\begin{frame}[allowframebreaks]
+    \frametitle{Pustaka 3: Wavelet Denoising}
+    \justifying
+
+    Fungsi threshold dari wavelet denoising ini terdiri dari dua macam, yakni soft threshold dan hard threshold.
+    \begin{equation}
+        \hat{d}=\left\{\begin{array}{ll}
+        d, & |d| \geq \lambda \\
+        0, & |d|<\lambda
+        \end{array}\right.
+        \label{eq: 2-GPSINS-WD-hard-thres}
+    \end{equation}
+    \begin{equation}
+        \hat{d}=\left\{\begin{array}{ll}
+        sgn(d)(|d|-\lambda), & |d| \geq \lambda \\
+        0, & |d|<\lambda
+        \end{array}\right.
+        \label{eq: 2-GPSINS-WD-soft-thres}
+    \end{equation}
+    dimana $d$ merupakan koefisien wavelet yang belum diproses, dan $\hat{d}$ merupakan koefisien wavelet setelah dilakukan thresholding. 
+    
+    Threshold dari $\lambda$ adalah
+    \begin{equation}
+        sgn(x)=\left\{\begin{array}{ll}
+        1, & x>0 \\
+        0, & x=0 \\
+        -1, & x<0
+        \end{array}\right.
+    \end{equation}
+    \begin{equation}
+        \lambda=\underset{T>0}{\arg }\left\{\min \left[\sum_{i=0}^{N}\left(\left|d_{i}\right| \wedge \lambda\right)^{2}+N \sigma_{n}^{2}-2 \sigma_{n}^{2} \sum_{i=0}^{N} I\left(|d_{i}|<\lambda\right)\right]\right\}
+        \label{eq: 2-GPSINS-WD-lambda}
+    \end{equation}
+    \begin{equation}
+        I(x)=\left\{\begin{array}{ll}
+        1, & \text { true } \\
+        0, & \text { false }
+        \end{array}\right.
+    \end{equation}
+\end{frame}
