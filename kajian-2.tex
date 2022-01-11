@@ -32,15 +32,15 @@
         \justifying
         \item mengintegrasikan Radar mmWave dengan Kamera untuk mendapatkan hasil deteksi halangan menggunakan metode Spatial Attention Feature (SAF)
         \vspace{1em}
-        \item Mendapatkan hasil deteksi halangan yang lebih baik dibandingkan hanya menggunakan kamera atau radar
+        \item Mendapatkan hasil deteksi halangan yang memiliki recall (kemampuan deteksi) lebih tinggi dibandingkan hanya menggunakan kamera atau radar
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Pustaka 2: Skema Sistem}
+    % \frametitle{Pustaka 2: Skema Sistem}
     \centering
-        \includegraphics[width=.6\textwidth]{2-SAF-diagram.png}
+    \includegraphics[width=.92\textwidth]{2-SAF-diagram.png}
 \end{frame}
 
 
@@ -48,9 +48,9 @@
     \frametitle{Pustaka 2: Metode}
     \begin{enumerate}
         \justifying
-        \item Deteksi Fitur Gambar dan Radar dengan ResNet50
-        \item Fitur radar dimasukkan ke blok SAF/SPF
-        \item Keluaran SAF dan Gambar digabungkan dengan Fusion Branch berbasis ResNet50
+        \item Deteksi Fitur Gambar dan Radar dengan backbone neural-network Residual Network-50 (ResNet50)
+        \item Fitur radar dimasukkan ke blok Spatial Attention Fusion (SAF)
+        \item Keluaran SAF dan Gambar digabungkan dengan Fusion Branch berbasis backbone ResNet50
         \item Penentuan posisi dengan pyramid network RetinaNet
     \end{enumerate}
 \end{frame}
@@ -59,7 +59,7 @@
 \begin{frame}
     \frametitle{Pustaka 2: Hasil}
     \centering
-    \includegraphics[width=\textwidth]{r2-hasil-1.png}
+    \includegraphics[width=.9\textwidth]{r2-hasil-1.png}
 \end{frame}
 
 
@@ -67,6 +67,7 @@
     \frametitle{Pustaka 2: Hasil}
     \centering
     \includegraphics[width=\textwidth]{r2-hasil-2.png}
+    Tabel Accuracy-Precision (AP) dan Average-Recall (AR)
 \end{frame}
 
 

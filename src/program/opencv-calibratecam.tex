@@ -1,0 +1,14 @@
+\lstset{
+  caption=Program kalibrasi kamera, 
+  label={lst: cv-calibration},
+  basicstyle=\footnotesize, frame=tb,
+  language=python
+}
+\begin{lstlisting}
+ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(
+    objpoints, 
+    imgpoints, 
+    gray.shape[::-1], 
+    None, None
+)
+\end{lstlisting}

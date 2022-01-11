@@ -1,0 +1,24 @@
+\lstset{
+  caption=Program menghilangkan bidang jalan, 
+  label={lst: removefloor},
+  basicstyle=\footnotesize, frame=tb,
+  language=python
+}
+\begin{lstlisting}
+def filter_ground(cloud):
+  # range antara min and max di sb-z dgn 0.1 step
+  bin_range = np.arange(cloud[:,2].min(),cloud[:,2].max(), 0.1)
+  # find distribution of points in z-axis
+  counts, bins = np.histogram(cloud[:,2], bins = bin_range)
+  # find for which z there is maximum points
+  max_z = np.where(counts == max(counts))[0][0]
+  # check max_z + 2 tidak overflow
+  if max_z + 2 <= len(bins):
+      ground_z = np.round(bins[max_z + 2], 2)
+  else:
+      ground_z = np.round(bins[-1], 2)
+  # remove ground points
+  objects_cloud = cloud[(cloud[:,2]>ground_z)]
+  
+  return objects_cloud, ground_z
+\end{lstlisting}

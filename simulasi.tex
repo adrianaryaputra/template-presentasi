@@ -1,0 +1,126 @@
+\begin{frame}
+    \Huge
+    \begin{center}
+        Simulasi dan Pembuatan Sub-Sistem
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Pengambilan Data Lidar}
+    
+    Data yang dihasilkan oleh Lidar memiliki format *.bin yang tidak dapat dibaca secara langsung dan perlu diproses ke dalam bentuk kumpulan set posisi point cloud (*.pcd). Kumpulan set ini dapat ditampilkan dalam plot 3D seperti Gambar berikut
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{lidar-raw.png}
+        \label{fig: lidar-plot3d-raw}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+    \input{src/program/bin2pcd.tex}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Lidar Clustering}
+    Lidar Clustering adalah metode untuk mengelompokkan point cloud yang dihasilkan oleh lidar ke dalam cluster berdasarkan jarak eucledian antara satu titik dengan titik lainnya. Terdapat beberapa langkah yang perlu dilakukan untuk mengimplementasikan metode ini, yakni:
+
+    \begin{itemize}
+        \item Voxel Grid Processing \\
+        \item Terrain Removal \\
+        \item Eucledian Clustering \\
+        \item Asosiasi
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Voxel Grid Processing}
+
+    Data point cloud ini memiliki jumlah yang sangat banyak ($3 \times 10^5$ hingga $2 \times 10^6$ titik) sehingga akan sangat membebani algoritma clustering. Untuk mengurangi jumlah data yang digunakan, maka dapat dilakukan reduksi data point cloud dengan menggunakan metode Voxel Grid \cite{open3d_2018}. Keluaran dari metode Voxel Grid ini memiliki jumlah data yang lebih sedikit, namun tidak mengurangi kemampuan deteksi secara signifikan \cite{open3d_2018}.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{lidar-voxelize.png}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+    \input{src/program/voxelgrid.tex}
+
+    Pada library Open3D telah terdapat function untuk melakukan operasi voxel grid yang dapat langsung digunakan. 
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Terrain Removal}
+
+    Setelah data point cloud direduksi menggunakan Voxel Grid, kita dapat menghilangkan bidang jalan dengan mencari bidang datar di sekitar lokasi $z$ minimal.Metode ini hanya efektif bila jalan berupa bidang datar.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{lidar-remove-floor.png}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+    \input{src/program/removefloor.tex}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Eucledian Clustering}
+
+    Pada langkah ini setiap titik diiterasi untuk menghitung apakah titik ini termasuk kedalam cluster yang sama atau cluster yang berbeda.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{lidar-clustering.png}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Asosiasi}
+
+    Langkah terakhir adalah melakukan deteksi dan penentuan bounding box pada cluster yang dianggap sebagai mobil. Langkah ini masih belum selesai dikerjakan
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Multi-Object Tracking}
+
+    Program Multi-Object Tracking ini terbagi kedalam dua bagian besar:
+    \begin{enumerate}
+        \item Filtering
+        \item Track Selection
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Filtering}
+
+    Pada ujicoba ini, filtering masih menggunakan filter kalman dasar karena terdapat error pada program filtering dengan Extended Kalman Filter yang diusulkan. Model yang digunakan pada kalman filter dasar ini tidak mempertimbangkan heading kendaraan karena heading kendaraan menyebabkan nonlinearitas pada sistem yang menyebabkan kalman filter dasar tidak dapat digunakan.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Track Selection}
+
+    \begin{itemize}
+        \item Track merupakan object yang digunakan untuk melakukan tracking pada halangan yang terdeteksi. 
+        \item Setiap track memiliki posisi awal yang diinisialisasi berdasar hasil deteksi halangan pertama. 
+        \item Pada deteksi ke-2 dan seterusnya (proses update), akan dilakukan prediksi pergerakan objek menggunakan filter Kalman. 
+        \item Halangan yang posisinya paling dekat ke hasil prediksi akan dianggap sebagai halangan yang sama. 
+        \item Apabila halangan tidak terdeteksi, Track akan terus melakukan prediksi hingga N langkah ke depan sebelum menghapus objek Track.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \centering
+    \animategraphics[loop, autoplay, width=.5\textwidth]{24}{animasi-tracking/image}{15}{130}
+\end{frame}

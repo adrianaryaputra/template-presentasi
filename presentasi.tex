@@ -25,8 +25,11 @@
 \usepackage{lipsum}
 \usepackage{verbatim}
 \usepackage{datetime}
+\usepackage{listings}
+\usepackage{animate}
 
-\usepackage[backend=bibtex, sorting=ydnt, style=authoryear, defernumbers=true]{biblatex}
+
+\usepackage[backend=bibtex, sorting=ydnt]{biblatex}
 \addbibresource{citation.bib}
 \nocite{*}
 
@@ -37,7 +40,7 @@
 
 \newdateformat{dmydate}{\monthname[\THEMONTH] \THEYEAR}   
 
-\title[Tracking Multi-sensor dengan MIPDA]{Desain Sistem Tracking Halangan di Sekitar Mobil Otonom Berdasarkan Data Multi-sensor Menggunakan Multi-Object Integrated Probabilistic Data Association}
+\title[Integrasi Data Multisensor]{Integrasi Data Multisensor dan Sinkronisasi Waktu Pengukuran \\Untuk Melakukan Tracking Halangan dan Posisi Mobil Otonom}
 
 \author{Adrian A. Firmansyah } % Your name
 \institute[ITS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -107,9 +110,10 @@
 \begin{frame}
     \frametitle{Rencana dan Jadwal Kegiatan}
     \centering
-    \includegraphics[width=.7\textwidth]{jadwal.png}
+    \includegraphics[width=.7\textwidth]{jadwal-v2.png}
 \end{frame}
 
+\input{simulasi.tex}
 
 \begin{frame}[allowframebreaks]
     \frametitle{Referensi}

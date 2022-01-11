@@ -1,0 +1,37 @@
+\lstset{
+  caption=Program Eucledian Clustering, 
+  label={lst: eucledianclustering},
+  basicstyle=\footnotesize, frame=tb,
+  language=python
+}
+\begin{lstlisting}
+def euclidean_clustering(
+  self, 
+  distance_threshold, 
+  cluster_parameters
+):
+clusters_identified = dict()
+cluster_id = 0
+# Set up a boolean list with all elements set to False
+processed_flag = [False]*self.nrows
+# Each row in pcd_data is a pcd point
+for point in self.pcd_data.iterrows():
+    index = point[0]
+    current_point = (point[1]["X"], point[1]["Y"], point[1]["Z"])
+    if not processed_flag[index]:
+        base_cluster = set()
+        self.find_clusters(
+          current_point, 
+          base_cluster, 
+          index, 
+          distance_threshold, 
+          cluster_parameters, 
+          processed_flag
+        )
+        # If cluster is within the parameter limits
+        if base_cluster is not None:
+            if (len(base_cluster) > cluster_parameters["min_size"]):
+                clusters_identified[cluster_id] = base_cluster
+                cluster_id += 1
+return clusters_identified
+\end{lstlisting}

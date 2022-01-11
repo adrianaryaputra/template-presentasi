@@ -37,9 +37,9 @@
 
 
 \begin{frame}
-    \frametitle{Pustaka 1: Skema Sistem}
+    % \frametitle{Pustaka 1: Skema Sistem}
     \centering
-    \includegraphics[width=.45\textwidth]{2-LREKF-diagram.png}
+    \includegraphics[width=.9\textwidth]{2-LREKF-diagram.png}
 \end{frame}
 
 
@@ -47,16 +47,16 @@
     \frametitle{Pustaka 1: Metode}
     \begin{enumerate}
         \justifying
-        \item pra-pemrosesan dilakukan menggunakan algoritma clustering dan asosiasi, dan menghasilkan centroid dari setiap objek halangan.
+        \item Pra-proses penggabungan dilakukan menggunakan algoritma clustering dan asosiasi, dan menghasilkan centroid dari setiap objek halangan.
         \item Pada pengukuran pertama, inisialisasi state dan matriks kovarian 
         \item Prediksi dengan:
         \begin{itemize}
             \item Menghitung perubahan waktu
-            \item Menghitung $F$ \& $Q$ baru berdasar perubahan waktu
-            \item Prediksi $z$ \& $P$
+            \item Menghitung matriks state $F$ \& matriks kovarian $Q$ baru berdasar perubahan waktu
+            \item Propagasi state $x$ \& kovarian $P$
         \end{itemize} 
         \item Bila data Radar, linearisasi fungsi pengukuran
-        \item Update state dengan pengukuran dan $z$ baru.
+        \item Update state dengan pengukuran dan state $x$ baru.
         \item Tracking dengan hungarian Algorithm
     \end{enumerate}
 \end{frame}
@@ -65,7 +65,8 @@
 \begin{frame}
     \frametitle{Pustaka 1: Hasil}
     \centering
-    \includegraphics[width=.8\textwidth]{r1-hasil-1.png}
+    \includegraphics[width=.8\textwidth]{r1-hasil-1.png}\\
+    dimana GT: Ground Truth, EKF: Algoritma EKF
 \end{frame}
 
 
@@ -91,14 +92,13 @@
     \normalsize
     \begin{itemize}
         \item Belum dapat membedakan jenis halangan karena hanya menggunakan Lidar dan Radar
-        \item Penggunaan Lidar dan Radar redundant karena keduanya mengukur jarak.
     \end{itemize}
 
     \large
     \textbf{Ide}\\
     \normalsize
     \begin{itemize}
-        \item Agar dapat membedakan jenis halangan, kamera dipilih untuk menggantikan radar karena mampu melakukan klasifikasi objek.
+        \item Agar dapat membedakan jenis halangan, diperlukan kamera dan algoritma yang mampu melakukan klasifikasi objek.
     \end{itemize}
 
 \end{frame}

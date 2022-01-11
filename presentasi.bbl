@@ -17,6 +17,29 @@
 \endgroup
 
 \datalist[entry]{ydnt/global//global/global}
+  \entry{richardsz2021cv}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SR}{%
+         family={Szeliski},
+         familyi={S\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SR1}
+    \strng{fullhash}{SR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{7}
+    \field{sortinithash}{7}
+    \field{title}{Computer Vision: Algorithms and Applications, 2nd ed.}
+    \field{volume}{2}
+    \field{year}{2021}
+  \endentry
+
   \entry{chang2020spatial}{article}{}
     \name{author}{7}{}{%
       {{hash=CS}{%
@@ -69,8 +92,6 @@
     \strng{fullhash}{CSZYZFZXHSFZWZ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{number}{4}
@@ -104,8 +125,6 @@
     \strng{fullhash}{KTPTH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{number}{15}
@@ -145,8 +164,6 @@
     \strng{fullhash}{LDJXZJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{pages}{53984\bibrangedash 53996}
@@ -182,8 +199,6 @@
     \strng{fullhash}{LPCXSS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision
@@ -192,6 +207,28 @@
     \field{title}{Stereo r-cnn based 3d object detection for autonomous
   driving}
     \field{year}{2019}
+  \endentry
+
+  \entry{open3d_2018}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={Open3D},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{7}
+    \field{sortinithash}{7}
+    \field{title}{Voxelization}
+    \verb{url}
+    \verb http://www.open3d.org/docs/release/tutorial/geometry/voxelization.htm
+    \verb l
+    \endverb
+    \field{journaltitle}{Voxelization - Open3D 0.14.1 documentation}
+    \field{year}{2018}
   \endentry
 
   \entry{MAP_CAM_MONO_3D}{inproceedings}{}
@@ -234,8 +271,6 @@
     \strng{fullhash}{SSBJREKAGK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2018}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{2018 IEEE Intelligent Vehicles Symposium (IV)}
@@ -282,8 +317,6 @@
     \strng{fullhash}{CXMHWJLBXT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{Proceedings of the IEEE conference on Computer Vision and
@@ -334,8 +367,6 @@
     \strng{fullhash}{WHWBLBMXYG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{pages}{71\bibrangedash 78}
@@ -371,8 +402,6 @@
     \strng{fullhash}{ZDIIPN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{2017 IEEE International Conference on Robotics and
@@ -384,6 +413,46 @@
     \field{title}{Fast segmentation of 3D point clouds: A paradigm on LiDAR
   data for autonomous vehicle applications}
     \field{year}{2017}
+  \endentry
+
+  \entry{alam2016ins}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=AM}{%
+         family={Alam},
+         familyi={A\bibinitperiod},
+         given={Mushfiqul},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Moreno},
+         familyi={M\bibinitperiod},
+         given={Gines},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sipos},
+         familyi={S\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rohac},
+         familyi={R\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AM+1}
+    \strng{fullhash}{AMMGSMRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{7}
+    \field{sortinithash}{7}
+    \field{booktitle}{Proceedings of the International Conference in Aerospace
+  for Young Scientists, Beijing, China}
+    \field{pages}{12\bibrangedash 13}
+    \field{title}{INS/GNSS localization using 15 state extended Kalman filter}
+    \field{year}{2016}
   \endentry
 
   \entry{MAP_LIDAR_2D}{inproceedings}{}
@@ -405,8 +474,6 @@
     \strng{fullhash}{CANRM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{2016 6th IEEE International Conference on Control System,
@@ -457,8 +524,6 @@
     \strng{fullhash}{HJHOPMKSSM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \verb{doi}
@@ -495,8 +560,6 @@
     \strng{fullhash}{KDYJM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{pages}{641\bibrangedash 652}
@@ -541,8 +604,6 @@
     \strng{fullhash}{RGUJBGDWH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{number}{6}
@@ -551,6 +612,74 @@
     \field{volume}{28}
     \field{journaltitle}{Journal of Field Robotics}
     \field{year}{2011}
+  \endentry
+
+  \entry{nemra2010robust}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NA}{%
+         family={Nemra},
+         familyi={N\bibinitperiod},
+         given={Abdelkrim},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Aouf},
+         familyi={A\bibinitperiod},
+         given={Nabil},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{NAAN1}
+    \strng{fullhash}{NAAN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{7}
+    \field{sortinithash}{7}
+    \field{number}{4}
+    \field{pages}{789\bibrangedash 798}
+    \field{title}{Robust INS/GPS sensor fusion for UAV localization using SDRE
+  nonlinear filtering}
+    \field{volume}{10}
+    \field{journaltitle}{IEEE Sensors Journal}
+    \field{year}{2010}
+  \endentry
+
+  \entry{schutze2008introduction}{book}{}
+    \name{author}{3}{}{%
+      {{hash=SH}{%
+         family={Sch{\"u}tze},
+         familyi={S\bibinitperiod},
+         given={Hinrich},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MCD}{%
+         family={Manning},
+         familyi={M\bibinitperiod},
+         given={Christopher\bibnamedelima D},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Raghavan},
+         familyi={R\bibinitperiod},
+         given={Prabhakar},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press Cambridge}%
+    }
+    \strng{namehash}{SHMCDRP1}
+    \strng{fullhash}{SHMCDRP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{7}
+    \field{sortinithash}{7}
+    \field{title}{Introduction to information retrieval}
+    \field{volume}{39}
+    \field{year}{2008}
   \endentry
 
   \entry{LIDAREKF}{inproceedings}{}
@@ -572,8 +701,6 @@
     \strng{fullhash}{OTTK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2006}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{booktitle}{2006 IEEE Intelligent Vehicles Symposium}
@@ -607,8 +734,6 @@
     \strng{fullhash}{QHMJB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2002}
-    \field{labeldatesource}{}
     \field{sortinit}{7}
     \field{sortinithash}{7}
     \field{number}{2}
@@ -641,8 +766,6 @@
     \strng{fullhash}{CSDWH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{}
     \field{sortinit}{8}
     \field{sortinithash}{8}
     \field{booktitle}{Proceedings. 1998 IEEE International Conference on
@@ -679,8 +802,6 @@
     \strng{fullhash}{MDERSS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1994}
-    \field{labeldatesource}{}
     \field{sortinit}{8}
     \field{sortinithash}{8}
     \verb{doi}
